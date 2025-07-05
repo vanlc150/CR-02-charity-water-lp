@@ -1,47 +1,312 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Charity Water Landing Page</title>
-    <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Charity Water Landing Page</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Proxima Nova', 'Avenir', Arial, sans-serif;
+      color: #333;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background-color: #ffffff;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+    .logo img {
+      height: 24px;
+      margin-right: 8px;
+    }
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      cursor: pointer;
+    }
+    .sign-in {
+      background-color: #feca2d;
+      border: none;
+      padding: 8px 16px;
+      font-weight: bold;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      min-height: 90vh;
+    }
+    .hero-text {
+      flex: 1;
+      background-color: #77a8bb;
+      padding: 60px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: left;
+    }
+    .hero-text h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #1a1a1a;
+    }
+    .hero-text p {
+      font-size: 1rem;
+      line-height: 1.5;
+      margin-bottom: 25px;
+      color: #333;
+    }
+    .form-group {
+      display: flex;
+      margin-bottom: 15px;
+    }
+    input[type="text"] {
+      flex: 1;
+      padding: 10px;
+      border: none;
+      border-radius: 4px 0 0 4px;
+      font-size: 1rem;
+    }
+    .cta-button,
+    .donate-button,
+    .sign-in {
+      padding: 12px 24px;
+      background-color: #feca2d;
+      color: #000;
+      text-decoration: none;
+      font-weight: bold;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+    .cta-button:hover,
+    .donate-button:hover,
+    .sign-in:hover {
+      background-color: #f0b800;
+    }
+    .subtext {
+      font-size: 0.9rem;
+      color: #333;
+    }
+    .hero-image {
+      flex: 1;
+      background-image: none;
+      background-size: cover;
+      background-position: center;
+    }
+    .story, .impact-story, .call-to-action {
+      padding: 60px 40px;
+      background-color: #f9f9f9;
+    }
+    .impact-content {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 20px;
+    }
+    .impact-image {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      flex: 1;
+    }
+    .impact-content p {
+      flex: 1;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+      }
+      .form-group {
+        flex-direction: column;
+      }
+      input[type="text"], .cta-button {
+        width: 100%;
+        margin-bottom: 10px;
+        border-radius: 4px;
+      }
+      .impact-content {
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
 <body>
-    <!-- Hero Section: This is the main banner at the top of the page -->
-    <section class="hero">
-        <!-- Main headline -->
-        <h1>Clean Water for Everyone</h1>
-        <!-- Subheadline -->
-        <p>Join us in bringing safe, clean water to communities in need.</p>
-    </section>
+  <header>
+    <div class="logo">
+      <img src="img/water-can-transparent.png" alt="charity: water logo">
+      charity: water
+    </div>
+    <nav>
+      <a href="#" onclick="showSection('hero-section'); return false;">About Us</a>
+      <a href="#" onclick="showSection('story-section'); return false;">Our Impact</a>
+      <a href="#" onclick="showSection('cta-section'); return false;">Donate</a>
+      <button class="sign-in">Sign In</button>
+    </nav>
+  </header>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const giveNowBtn = document.getElementById('giveNowBtn');
+    giveNowBtn.addEventListener('click', function () {
+      confetti({
+        particleCount: 100,
+        spread: 70,
+        origin: { y: 0.6 }
+      });
+    });
+  });
+</script>
 
-    <!-- Story Section: This tells the story of the nonprofit -->
-    <section class="story">
-        <h2>Our Story</h2>
-        <p>
-         
-    </section>
-
-    <!-- Real-World Impact Story Section -->
-    <section class="impact-story">
-        <!-- Section headline -->
-        <h2>Real Impact: Meet Amina</h2>
-        <!-- Container for image and text -->
-        <div class="impact-content">
-            <!-- Impact image -->
-            <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80" alt="Amina smiling with clean water" class="impact-image">
-            <!-- Impact story text -->
-            <p>
-                Amina used to walk miles every day to collect water for her family. Thanks to your support, her village now has a clean water well. Amina can go to school and her family is healthier and happier.
-            </p>
-        </div>
-    </section>
-
-    <!-- Call-to-Action Section: This encourages visitors to take action -->
-    <section class="call-to-action">
-        <h2>Make a Difference</h2>
-        <p>Your support can help save lives. Every donation brings us closer to a world with clean water for all.</p>
-        <a href="#" class="donate-button">Donate Now</a>
-    </section>
+  <!-- Rest of the content remains unchanged -->
 </body>
 </html>
+
+<!-- Hero Section (About Us) -->
+<section class="hero" id="hero-section">
+  <!-- Container for left and right sides -->
+  <div class="hero-container">
+    <!-- Left side: text -->
+    <div class="hero-text">
+      <h1>Small Monthly Gifts.<br>Daily Waves of Hope.</h1>
+      <p>Your gifts fund long-term water solutions, support local leadership, and help break the cycle of water poverty for thousands of families, bringing daily hope for the generations to come.</p>
+      <div class="form-group">
+        <input type="text" placeholder="Amount Here">
+        <button class="cta-button" id="giveNowBtn">Give Now</button>
+
+      </div>
+      <div class="subtext">$20 dollars a month helps fund one family’s access to clean water every day.</div>
+    </div>
+    <!-- Right side: image -->
+    <div class="hero-image">
+      <img src="https://cdn2.dropmarkusercontent.com/52043/1b90606fe869585aa4a73fef2d582743544c85398f725fd9457aacb60006aa32/preview/0207_Ethiopia_2019_CG-.jpg?Expires=1751749893&Signature=Yw0p-CD9X6q8O1i8-IaLLQtt1BNW~zYFrZDug2hh2K4sekEiPt3sKX2pMphTeXIH-CXxYmbdN6Fm3WKpxFX5vOhPqfd81uvz5dPSc0uXhzbTl938tjv7UHVsMKyMPEqA4sISU-s4dTGGjb202X4mACERr7KmZgs7GCZBcBA4J40CXpviqo3Lgto-hDiSB6b17fWScpuzm4Z8l4PqIMYBf1d-XuFsHqQaJhCrLl4TUyzzbRC02l6mgMWeCNRZRrrAJzgwTZ7ch0GqmdVKmcLzcuTYw39T-zy3cbZ8avhCmH15jFniStnYB0mlHZVgb6OY-oh2K3-YnipFjCvfYYc6jQ__&Key-Pair-Id=APKAITQYWVEN757ZA4KQ" 
+        alt="CharityWater Hero Image" style="width:100%; max-width:700px; border: radius 0px;">
+    </div>
+  </div>
+</section>
+
+  <!-- Story Section (Our Work) -->
+  <section class="story" id="story-section" style="display:none;">
+    <h2>Our Story</h2>
+    <p>At charity: water, we believe in a world where everyone has access to clean and safe drinking water. Our mission is rooted in hope, local leadership, and sustainable impact. From deep wells to rainwater catchments, every project brings lasting change. We are providing clean water to rural communities in need by building water projects and educating/promoting locals on the maintenance of these projects long-term.</p>
+  </section>
+
+  <!-- Impact Story Section (Page 3, not linked in nav) -->
+  <section class="impact-story" id="impact-section" style="display:none;">
+    <h2 style="text-align: center;">Real Impact: Meet Amina</h2>
+    <div class="impact-content">
+      <img src="https://cdn2.dropmarkusercontent.com/52043/93befcaa508b5c7dce347406129ee25c324e03c88ba57013e3f783118d3f84b1/preview/4898_Ethiopia_2019_CG-.jpg?Expires=1751754122&Signature=Oc1ceYkzVY4~irjWhLcdFGYsa~Y2DvBLCYGRBddXUa38~kLzdsKWnTIKB-pxG1S6p8-fqVHuSsG-Hj9X4hmtEfnXoBe9YaTdQCaArwQBYjeo0d3ARR8ZtrwBjbRQVNLix8Vxw4MuPR2yoU9t4ipaCtZ6zEanKEMInfvuq4x6aBD8xwVkkVZOWvmY7zmn1Kb30KSLXcgy7qTCvcuBVIi9yAM84KTZYY58WqVHuTXtToFIqQwfDsdDBnmfhvD86vGcXNvYlxbFgxrvNZhbvxpzRUJ-0Sr5akwzQag7B2NEThkNxiIabxG0om3oqQnLX9F7S4W4lbAkN4UOTZoJP8Ub2g__&Key-Pair-Id=APKAITQYWVEN757ZA4KQ" alt="Amina smiling with clean water" class="impact-image">
+      <p>
+        Amina used to walk miles every day to collect water for her family. Thanks to your support, her village now has a clean water well. Amina can go to school and her family is healthier and happier.
+      </p>
+    </div>
+  </section>
+
+<!-- Call-to-Action Section (Join Us) -->
+<section class="call-to-action" id="cta-section" style="display:none;">
+  <!-- Container for left and right sides, just like hero section -->
+  <div class="cta-container">
+    <!-- Left side: text -->
+    <div class="cta-text">
+      <h2>Make a Difference</h2>
+      <p>Your support can help save lives. Every donation brings us closer to a world with clean water for all.</p>
+      <a href="#" class="donate-button">Donate Now</a>
+    </div>
+    <!-- Right side: image -->
+    <div class="cta-image">
+      <img src="https://cdn2.dropmarkusercontent.com/52043/8280a39cfd774a62458f611a85bec698d20765d5072a9d9b11d4f1d9a09e800b/preview/4604_Ethiopia_2019_CG-.jpg?Expires=1751757159&Signature=F5dywHdLfdsPvcWHO~rwrnfK9BIgdoZyqqtiSzoUzijE997ylLp~f6i4lJhgoDdvR0xJ9ovGQ05J2ksFOdExZGRJ0z8QAb64HENwgwU8kxO29upr9aGYjV4jgXlKEVNun6eNH7FHReHpR63ABw33jKxgF6R97zUj48n87Wp6DQPDPO1YEC43fQUaM~ttOvRUnE4w5NjTVXiwE8R4ZWUkWGxiFiV7YpX6HzGyO7TK7IYkDxwSrKbSc19~8nucKO~AlrhTAut8wp4OYerCcEtgpZyso2ZMiybEOTkmnvkmT8gQ6gwCpRMJRaEpuaFoia1ittxzw-Ooc3k--EwAbXdimQ__&Key-Pair-Id=APKAITQYWVEN757ZA4KQ"
+        alt="Clean water well" style="width:100%; height:100%; object-fit:cover; max-width:none; border-radius:0;">
+    </div>
+  </div>
+</section>
+
+<!-- Add this CSS in your <style> tag or styles.css -->
+<style>
+/* Beginner-friendly: CTA section split in half like hero */
+.cta-container {
+  display: flex;           /* Side by side layout */
+  width: 100%;
+  min-height: 400px;       /* Makes it look more like a hero section */
+}
+
+.cta-text {
+  width: 50%;              /* Left half for text */
+  text-align: left;
+  background-color: #f9f9f9;
+  padding: 60px 40px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertically center the text */
+}
+
+.cta-image {
+  width: 50%;              /* Right half for image */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f4f8fb;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+.cta-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  max-width: none;
+  border-radius: 0;
+}
+
+/* Responsive: Stack on small screens */
+@media (max-width: 768px) {
+  .cta-container {
+    flex-direction: column;
+    min-height: auto;
+  }
+  .cta-text, .cta-image {
+    width: 100%;
+    padding: 20px 10px;
+    height: auto;
+  }
+  .cta-image img {
+    height: auto;
+  }
+}
+</style>
+  </section>
+
+  <!-- Simple JavaScript to show one section at a time -->
+  <script>
+    // This function hides all sections and shows only the one you want
+    function showSection(sectionId) {
+      // List all your section IDs
+      var sections = ['hero-section', 'story-section', 'impact-section', 'cta-section'];
+      // Hide all sections
+      for (var i = 0; i < sections.length; i++) {
+        document.getElementById(sections[i]).style.display = 'none';
+      }
+      // Show the selected section
+      document.getElementById(sectionId).style.display = 'block';
+      // Scroll to top for better user experience
+      window.scrollTo(0, 0);
+    }
+
+    // Show the hero section by default when the page loads
+    showSection('hero-section');
+  </script>

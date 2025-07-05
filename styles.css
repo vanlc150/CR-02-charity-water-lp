@@ -26,7 +26,7 @@ Fonts:
 /* Set up the main font and background color for the whole page */
 body {
   background-color: #f4f8fb; /* Soft light blue for a fresh look */
-  font-family: 'Avenir', 'Proxima Nova', Arial, sans-serif;
+  font-family: 'Proxima Nova', 'Avenir', Arial, sans-serif; /* Use Proxima Nova */
   margin: 0;
   padding: 0;
   color: #222;
@@ -45,19 +45,62 @@ section {
 .hero {
   position: relative; /* Needed for overlay */
   /* Set a background image that covers the whole section */
-  background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1500&q=80');
   background-size: cover;      /* Make the image cover the whole area */
   background-position: center; /* Center the image */
   background-repeat: no-repeat;
-  color: #fff;                 /* White text for contrast */
-  text-align: center;          /* Center the text */
+  color: #fff;                /* White text for contrast */
+  text-align: left;          /* Center the text */
   padding: 60px 20px;          /* Add space above and below */
   border-radius: 0 0 16px 16px; /* Only round bottom corners */
 
   /* Add a dark overlay for better text readability */
   /* This uses a simple linear-gradient overlay */
-  background-blend-mode: darken;
-  background-color: rgba(46, 157, 247, 0.45); /* Blue overlay */
+  background-color: #77a8bb(46, 157, 247, 0.45); /* Blue overlay */
+}
+/* Beginner-friendly: Divide hero section in half */
+.hero-container {
+  display: flex;              /* Put text and image side by side */
+  width: 100%;
+}
+
+.hero-text {
+  width: 50%;                 /* Left half for text */
+  text-align: left;           /* Left align text */
+  background-color: #77a8bb;
+  padding: 60px 40px;
+  box-sizing: border-box;     /* Include padding in width */
+}
+
+/* Right side: image */
+.hero-image {
+  width: 50%;                 /* Take up half the hero section */
+  height: 100%;               /* Fill the height of the hero section */
+  display: flex;
+  align-items: center;        /* Center image vertically */
+  justify-content: center;    /* Center image horizontally */
+  background: #f4f8fb;        /* Optional: light background */
+  padding: 0;                 /* Remove extra padding */
+  box-sizing: border-box;
+}
+
+/* Make the image fill the container */
+.hero-image img {
+  width: 100%;                /* Image fills the half horizontally */
+  height: 100%;               /* Image fills the half vertically */
+  object-fit: cover;          /* Crop to fit nicely */
+  max-width: none;            /* Remove max-width limit */
+  border-radius: 0;           /* No rounded corners */
+}
+
+/* Responsive: Stack on small screens */
+@media (max-width: 768px) {
+  .hero-container {
+    flex-direction: column;
+  }
+  .hero-text, .hero-image {
+    width: 100%;
+    padding: 20px 10px;
+  }
 }
 
 /* Make the headline bold and modern */
@@ -113,7 +156,7 @@ h2 {
   display: inline-block;
   background-color: #4FCB53; /* Green */
   color: #fff;
-  padding: 14px 32px;
+  padding: 14px 20px;
   text-decoration: none;
   border-radius: 6px;
   font-weight: bold;
@@ -141,6 +184,35 @@ section {
   Media queries help make your website look good on different screen sizes,
   like phones (small screens) and computers (large screens).
 */
+
+/* Add a smooth transition to all buttons */
+button,
+.cta-button,
+.donate-button {
+  transition: background 0.3s, transform 0.2s; /* Smooth color and size change */
+}
+
+/* Make buttons slightly bigger and darker when hovered */
+button:hover,
+.cta-button:hover,
+.donate-button:hover {
+  background-color: #2E9DF7; /* Change to a nice blue on hover */
+  color: #fff;               /* Make text white on hover */
+  transform: scale(1.05);    /* Make the button a little bigger */
+}
+
+/* Add a simple hover effect to section headings */
+h2:hover {
+  color: #FFC907;            /* Change heading color to yellow on hover */
+  transition: color 0.3s;    /* Smooth color change */
+}
+
+/* Add a shadow effect to images when hovered */
+img:hover,
+.impact-image:hover {
+  box-shadow: 0 4px 16px rgba(46, 157, 247, 0.18); /* Bigger shadow on hover */
+  transition: box-shadow 0.3s;                     /* Smooth shadow change */
+}
 
 /* This media query applies styles when the screen is 600px wide or less (like on most phones) */
 @media (max-width: 600px) {
@@ -196,3 +268,66 @@ section {
     width: 300px;
   }
 }
+/* Beginner-friendly responsive styles for small screens */
+@media (max-width: 768px) {
+  /* Stack hero section content vertically on small screens */
+  .hero {
+    flex-direction: column;
+    padding: 20px 10px;
+    min-height: auto;
+  }
+
+  .hero-text {
+    padding: 30px 10px;
+  }
+
+  .hero img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+  }
+
+  /* Make impact story content stack vertically */
+  .impact-content {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .impact-image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Make sections have less padding */
+  .story, .impact-story, .call-to-action {
+    padding: 30px 10px;
+  }
+
+  /* Make form elements stack */
+  .form-group {
+    flex-direction: column;
+  }
+
+ /* Make input and both buttons the same height */
+input[type="text"], .cta-button, .donate-button {
+  height: 40px;       /* All are 40px tall */
+  font-size: 1rem;      /* Same text size */
+  box-sizing: border-box;
+}
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+nav a:hover {
+  transform: scale(1.1);
+  color: #FFC907; /* optional: highlight the color on hover */
+}
+
+  }
