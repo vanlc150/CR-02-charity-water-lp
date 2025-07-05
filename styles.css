@@ -322,12 +322,13 @@ nav a {
   color: #333;
   font-weight: 500;
   cursor: pointer;
-  transition: transform 0.2s ease, color 0.2s ease;
+  transition: color 0.2s ease, transform 0.2s ease; /* smooth color and size transition */
 }
 
 nav a:hover {
-  transform: scale(1.1);
-  color: #FFC907; /* optional: highlight the color on hover */
+  color: #feca2d;         /* yellow color on hover */
+  transform: scale(1.1);  /* slightly grow the link */
 }
+
 
   }

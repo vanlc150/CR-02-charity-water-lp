@@ -30,12 +30,18 @@
       margin-right: 8px;
     }
     nav a {
-      margin: 0 15px;
-      text-decoration: none;
-      color: #333;
-      font-weight: 500;
-      cursor: pointer;
-    }
+  margin: 0 15px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.2s ease, transform 0.2s ease; /* smooth color and size transition */
+}
+
+nav a:hover {
+  color: #feca2d;         /* yellow color on hover */
+  transform: scale(1.1);  /* slightly grow the link */
+}
     .sign-in {
       background-color: #feca2d;
       border: none;
@@ -193,7 +199,7 @@
     </div>
     <!-- Right side: image -->
     <div class="hero-image">
-      <img src="https://cdn2.dropmarkusercontent.com/52043/1b90606fe869585aa4a73fef2d582743544c85398f725fd9457aacb60006aa32/preview/0207_Ethiopia_2019_CG-.jpg?Expires=1751749893&Signature=Yw0p-CD9X6q8O1i8-IaLLQtt1BNW~zYFrZDug2hh2K4sekEiPt3sKX2pMphTeXIH-CXxYmbdN6Fm3WKpxFX5vOhPqfd81uvz5dPSc0uXhzbTl938tjv7UHVsMKyMPEqA4sISU-s4dTGGjb202X4mACERr7KmZgs7GCZBcBA4J40CXpviqo3Lgto-hDiSB6b17fWScpuzm4Z8l4PqIMYBf1d-XuFsHqQaJhCrLl4TUyzzbRC02l6mgMWeCNRZRrrAJzgwTZ7ch0GqmdVKmcLzcuTYw39T-zy3cbZ8avhCmH15jFniStnYB0mlHZVgb6OY-oh2K3-YnipFjCvfYYc6jQ__&Key-Pair-Id=APKAITQYWVEN757ZA4KQ" 
+      <img src="img/0207_Ethiopia_2019_CG-.jpg" 
         alt="CharityWater Hero Image" style="width:100%; max-width:700px; border: radius 0px;">
     </div>
   </div>
@@ -206,7 +212,7 @@
 
     <h2 style="text-align: center;">Real Impact: Meet Amina</h2>
     <div class="impact-content">
-      <img src="https://cdn2.dropmarkusercontent.com/52043/93befcaa508b5c7dce347406129ee25c324e03c88ba57013e3f783118d3f84b1/preview/4898_Ethiopia_2019_CG-.jpg?Expires=1751754122&Signature=Oc1ceYkzVY4~irjWhLcdFGYsa~Y2DvBLCYGRBddXUa38~kLzdsKWnTIKB-pxG1S6p8-fqVHuSsG-Hj9X4hmtEfnXoBe9YaTdQCaArwQBYjeo0d3ARR8ZtrwBjbRQVNLix8Vxw4MuPR2yoU9t4ipaCtZ6zEanKEMInfvuq4x6aBD8xwVkkVZOWvmY7zmn1Kb30KSLXcgy7qTCvcuBVIi9yAM84KTZYY58WqVHuTXtToFIqQwfDsdDBnmfhvD86vGcXNvYlxbFgxrvNZhbvxpzRUJ-0Sr5akwzQag7B2NEThkNxiIabxG0om3oqQnLX9F7S4W4lbAkN4UOTZoJP8Ub2g__&Key-Pair-Id=APKAITQYWVEN757ZA4KQ" alt="Amina smiling with clean water" class="impact-image">
+      <img src="img/7255_Ethiopia_2019_CG-.jpg" alt="Amina smiling with clean water" class="impact-image">
       <p>
         Amina used to walk miles every day to collect water for her family. Thanks to your support, her village now has a clean water well. Amina can go to school and her family is healthier and happier.
       </p>
@@ -217,7 +223,7 @@
   <section class="impact-story" id="impact-section" style="display:none;">
     <h2 style="text-align: center;">Real Impact: Meet Amina</h2>
     <div class="impact-content">
-      <img src="https://cdn2.dropmarkusercontent.com/52043/93befcaa508b5c7dce347406129ee25c324e03c88ba57013e3f783118d3f84b1/preview/4898_Ethiopia_2019_CG-.jpg?Expires=1751754122&Signature=Oc1ceYkzVY4~irjWhLcdFGYsa~Y2DvBLCYGRBddXUa38~kLzdsKWnTIKB-pxG1S6p8-fqVHuSsG-Hj9X4hmtEfnXoBe9YaTdQCaArwQBYjeo0d3ARR8ZtrwBjbRQVNLix8Vxw4MuPR2yoU9t4ipaCtZ6zEanKEMInfvuq4x6aBD8xwVkkVZOWvmY7zmn1Kb30KSLXcgy7qTCvcuBVIi9yAM84KTZYY58WqVHuTXtToFIqQwfDsdDBnmfhvD86vGcXNvYlxbFgxrvNZhbvxpzRUJ-0Sr5akwzQag7B2NEThkNxiIabxG0om3oqQnLX9F7S4W4lbAkN4UOTZoJP8Ub2g__&Key-Pair-Id=APKAITQYWVEN757ZA4KQ" alt="Amina smiling with clean water" class="impact-image">
+      <img src="img/7255_Ethiopia_2019_CG-.jpg" alt="Amina smiling with clean water" class="impact-image">
       <p>
         Amina used to walk miles every day to collect water for her family. Thanks to your support, her village now has a clean water well. Amina can go to school and her family is healthier and happier.
       </p>
@@ -236,7 +242,7 @@
     </div>
     <!-- Right side: image -->
     <div class="cta-image">
-      <img src="https://cdn2.dropmarkusercontent.com/52043/8280a39cfd774a62458f611a85bec698d20765d5072a9d9b11d4f1d9a09e800b/preview/4604_Ethiopia_2019_CG-.jpg?Expires=1751757159&Signature=F5dywHdLfdsPvcWHO~rwrnfK9BIgdoZyqqtiSzoUzijE997ylLp~f6i4lJhgoDdvR0xJ9ovGQ05J2ksFOdExZGRJ0z8QAb64HENwgwU8kxO29upr9aGYjV4jgXlKEVNun6eNH7FHReHpR63ABw33jKxgF6R97zUj48n87Wp6DQPDPO1YEC43fQUaM~ttOvRUnE4w5NjTVXiwE8R4ZWUkWGxiFiV7YpX6HzGyO7TK7IYkDxwSrKbSc19~8nucKO~AlrhTAut8wp4OYerCcEtgpZyso2ZMiybEOTkmnvkmT8gQ6gwCpRMJRaEpuaFoia1ittxzw-Ooc3k--EwAbXdimQ__&Key-Pair-Id=APKAITQYWVEN757ZA4KQ"
+      <img src="img/4604_Ethiopia_2019_CG-.jpg"
         alt="Clean water well" style="width:100%; height:100%; object-fit:cover; max-width:none; border-radius:0;">
     </div>
   </div>
